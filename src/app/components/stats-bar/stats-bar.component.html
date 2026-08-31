@@ -1,0 +1,12 @@
+<section class="stats-bar">
+  <div class="container stats-bar__grid">
+    @for (stat of stats; track stat.label; let i = $index) {
+      <div class="stat" appReveal [class]="'reveal-delay-' + (i + 1)">
+        <div class="stat__value">
+          <span [appCountUp]="stat.value" [suffix]="stat.suffix"></span>
+        </div>
+        <div class="stat__label">{{ stat.label }}</div>
+      </div>
+    }
+  </div>
+</section>

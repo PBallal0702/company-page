@@ -1,0 +1,39 @@
+<section class="impact section" id="impact">
+  <div class="impact__bg" aria-hidden="true"></div>
+
+  <div class="container">
+    <div class="section-head" appReveal>
+      <span class="eyebrow eyebrow--light">Why MedTech HMS</span>
+      <h2 class="section-title impact__title">Why hospitals choose — and stay with — MedTech HMS</h2>
+      <p class="section-sub impact__sub">
+        Real operational impact, not just another dashboard nobody opens.
+      </p>
+    </div>
+
+    <div class="impact__grid">
+      <div class="impact__reasons" appReveal>
+        @for (r of reasons; track r.title; let i = $index) {
+          <div class="reason">
+            <span class="reason__num">{{ (i + 1) < 10 ? '0' + (i + 1) : (i + 1) }}</span>
+            <div>
+              <strong>{{ r.title }}</strong>
+              <p>{{ r.desc }}</p>
+            </div>
+          </div>
+        }
+      </div>
+
+      <div class="impact__stats">
+        @for (s of impactStats; track s.title; let i = $index) {
+          <div class="impact-card" appReveal [class]="'reveal-delay-' + (i + 1)">
+            <div class="impact-card__value">
+              <span [appCountUp]="s.value" [suffix]="s.suffix"></span>
+            </div>
+            <strong>{{ s.title }}</strong>
+            <p>{{ s.desc }}</p>
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+</section>

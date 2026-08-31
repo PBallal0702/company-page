@@ -1,0 +1,26 @@
+<section class="testimonials section">
+  <div class="container">
+    <div class="section-head" appReveal>
+      <span class="eyebrow">Testimonials</span>
+      <h2 class="section-title">Hospitals that run on MedTech HMS</h2>
+    </div>
+
+    <div class="testimonials__grid">
+      @for (t of testimonials; track t.name; let i = $index) {
+        <div class="t-card" appReveal [class]="'reveal-delay-' + (i + 1)">
+          <svg class="t-card__quote" viewBox="0 0 32 24" fill="none">
+            <path d="M0 24V13.5C0 5.6 5.4 0.5 13 0v5.4c-4 0.6-6.4 3-6.4 6.6H13V24H0zm18 0V13.5C18 5.6 23.4 0.5 31 0v5.4c-4 0.6-6.4 3-6.4 6.6H31V24H18z" fill="#0891b2" opacity="0.18"/>
+          </svg>
+          <p class="t-card__text">&ldquo;{{ t.quote }}&rdquo;</p>
+          <div class="t-card__person">
+            <span class="t-card__avatar">{{ t.initials }}</span>
+            <div>
+              <strong>{{ t.name }}</strong>
+              <span>{{ t.role }}</span>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>

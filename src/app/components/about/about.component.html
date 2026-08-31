@@ -1,0 +1,68 @@
+<section class="about section" id="about">
+  <div class="container about__grid">
+    <div class="about__art" appReveal>
+      <svg viewBox="0 0 420 380" class="about__illustration" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="40" y="40" width="340" height="300" rx="24" fill="#ecfeff"/>
+        <rect x="70" y="80" width="180" height="18" rx="9" fill="#0891b2" opacity="0.85"/>
+        <rect x="70" y="112" width="130" height="12" rx="6" fill="#94a3b8" opacity="0.5"/>
+        <rect x="70" y="150" width="280" height="1" stroke="#cbd5e1"/>
+
+        <g class="about__building">
+          <rect x="90" y="180" width="90" height="110" rx="10" fill="#22d3ee"/>
+          <rect x="105" y="196" width="16" height="16" rx="3" fill="#ecfeff"/>
+          <rect x="133" y="196" width="16" height="16" rx="3" fill="#ecfeff"/>
+          <rect x="105" y="222" width="16" height="16" rx="3" fill="#ecfeff"/>
+          <rect x="133" y="222" width="16" height="16" rx="3" fill="#ecfeff"/>
+          <rect x="105" y="248" width="16" height="16" rx="3" fill="#ecfeff"/>
+          <rect x="133" y="248" width="44" height="42" rx="4" fill="#155e75"/>
+          <path d="M124 180v-24m-14 14h28" stroke="#0891b2" stroke-width="6" stroke-linecap="round"/>
+        </g>
+
+        <g class="about__card-float">
+          <rect x="200" y="200" width="140" height="80" rx="14" fill="#fff" stroke="#e2e8f0"/>
+          <circle cx="226" cy="226" r="12" fill="#5a78e6"/>
+          <rect x="246" y="219" width="70" height="8" rx="4" fill="#0f172a" opacity="0.8"/>
+          <rect x="246" y="233" width="50" height="6" rx="3" fill="#94a3b8" opacity="0.6"/>
+          <rect x="216" y="252" width="104" height="14" rx="7" fill="#ecfeff"/>
+          <rect x="220" y="256" width="60" height="6" rx="3" fill="#0891b2"/>
+        </g>
+
+        <circle cx="345" cy="90" r="26" fill="#fef3c7"/>
+        <path d="M345 78v24m-12-12h24" stroke="#f59e0b" stroke-width="3" stroke-linecap="round"/>
+      </svg>
+    </div>
+
+    <div class="about__copy" appReveal>
+      <span class="eyebrow">About MedTech HMS</span>
+      <h2 class="section-title">
+        Software built to run OPD operations, not just digitize paperwork
+      </h2>
+      <p class="section-sub" style="text-align:left; margin-top:16px;">
+        MedTech HMS started with a simple observation: hospital front desks
+        and doctors were spending more time fighting registers and disconnected
+        tools than caring for patients. We built a single, role-based system
+        that connects the front desk, doctors and hospital administrators —
+        from booking an appointment to writing a prescription.
+      </p>
+      <p class="section-sub" style="text-align:left; margin-top:12px;">
+        Today, MedTech HMS powers OPD counters, doctor consultation desks
+        and department/workstation configuration for clinics and hospitals
+        that need software which actually fits how healthcare teams work.
+      </p>
+
+      <div class="about__values">
+        @for (v of values; track v.title) {
+          <div class="value-item">
+            <span class="value-item__check">
+              <svg viewBox="0 0 20 20" fill="none"><path d="M4 10.5l4 4 8-9" stroke="#0891b2" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            <div>
+              <strong>{{ v.title }}</strong>
+              <p>{{ v.desc }}</p>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+</section>

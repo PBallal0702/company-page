@@ -1,0 +1,24 @@
+<header class="navbar" [class.is-scrolled]="scrolled">
+  <div class="container navbar__inner">
+    <a href="#top" class="brand">
+      <span class="brand__mark">
+        <img src="/images/logo.png" alt="MedTech HMS logo" />
+      </span>
+      <span class="brand__text">MedTech <span>HMS</span></span>
+    </a>
+
+    <nav class="nav-links" [class.is-open]="menuOpen">
+      @for (link of navLinks; track link.href) {
+        <a [href]="link.href" (click)="closeMenu()">{{ link.label }}</a>
+      }
+      <a href="#pricing" class="nav-links__cta-mobile btn btn-primary" (click)="closeMenu()">Request Demo</a>
+    </nav>
+
+    <div class="navbar__actions">
+      <a href="#pricing" class="btn btn-primary btn-sm">Request Demo</a>
+      <button class="hamburger" [class.is-open]="menuOpen" (click)="toggleMenu()" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>

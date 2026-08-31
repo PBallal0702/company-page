@@ -1,0 +1,65 @@
+.about__grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 64px;
+  align-items: center;
+
+  @media (max-width: 900px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.about__illustration {
+  width: 100%;
+  max-width: 420px;
+  margin: 0 auto;
+}
+
+.about__building {
+  animation: floatSlow 6s ease-in-out infinite;
+  transform-origin: center;
+}
+
+.about__card-float {
+  animation: float 5s ease-in-out infinite 0.3s;
+  transform-origin: center;
+}
+
+.about__copy {
+  text-align: left;
+}
+
+.about__values {
+  margin-top: 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.value-item {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+
+  strong {
+    display: block;
+    font-family: var(--font-heading);
+    font-size: 15.5px;
+    margin-bottom: 4px;
+  }
+
+  p { font-size: 14.5px; }
+
+  &__check {
+    flex-shrink: 0;
+    width: 30px;
+    height: 30px;
+    border-radius: 9px;
+    background: rgba(8, 145, 178, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    svg { width: 16px; height: 16px; }
+  }
+}

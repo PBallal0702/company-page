@@ -1,0 +1,122 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: 20px 0;
+  transition: all 0.35s ease;
+  background: transparent;
+
+  &.is-scrolled {
+    padding: 12px 0;
+    background: rgba(248, 250, 252, 0.85);
+    backdrop-filter: blur(14px);
+    box-shadow: var(--shadow-sm);
+  }
+}
+
+.navbar__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand__mark img { height: 44px; width: auto; display: block; }
+
+.brand__text {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 19px;
+  color: var(--ink);
+
+  span { color: var(--primary); }
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+
+  a {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--ink-soft);
+    transition: color 0.2s ease;
+
+    &:hover { color: var(--primary); }
+  }
+
+  &__cta-mobile { display: none; }
+}
+
+.navbar__actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.btn-sm { padding: 10px 20px; font-size: 14px; }
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 38px;
+  height: 38px;
+  background: transparent;
+  border: none;
+
+  span {
+    display: block;
+    height: 2px;
+    width: 100%;
+    background: var(--ink);
+    border-radius: 2px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+
+  &.is-open {
+    span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    span:nth-child(2) { opacity: 0; }
+    span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  }
+}
+
+@media (max-width: 900px) {
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    height: 100vh;
+    width: min(320px, 80vw);
+    background: #fff;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 28px;
+    padding: 40px;
+    box-shadow: var(--shadow-lg);
+    transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+
+    a { font-size: 18px; }
+
+    &.is-open { right: 0; }
+
+    &__cta-mobile {
+      display: inline-flex;
+      margin-top: 12px;
+    }
+  }
+
+  .navbar__actions .btn { display: none; }
+  .hamburger { display: flex; }
+}

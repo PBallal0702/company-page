@@ -1,0 +1,28 @@
+import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+
+@Component({
+  selector: 'app-footer',
+  standalone: true,
+  imports: [CommonModule],
+  templateUrl: './footer.component.html',
+  styleUrl: './footer.component.scss'
+})
+export class FooterComponent {
+  year = new Date().getFullYear();
+
+  columns = [
+    {
+      title: 'Product',
+      links: ['Features', 'Pricing', 'Why MedTech HMS', 'Request a Demo'],
+    },
+    {
+      title: 'Company',
+      links: ['About Us', 'Careers', 'Contact'],
+    },
+    {
+      title: 'Resources',
+      links: ['Documentation', 'Support Center', 'System Status'],
+    },
+  ];
+}

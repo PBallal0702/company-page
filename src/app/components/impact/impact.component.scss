@@ -1,0 +1,124 @@
+.impact {
+  position: relative;
+  color: #fff;
+  overflow: hidden;
+}
+
+.impact__bg {
+  position: absolute;
+  inset: 0;
+  background: var(--gradient-dark);
+  z-index: -2;
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(1px 1px at 20% 30%, rgba(255,255,255,0.08) 1px, transparent 0),
+      radial-gradient(1px 1px at 70% 60%, rgba(255,255,255,0.06) 1px, transparent 0),
+      radial-gradient(1px 1px at 40% 80%, rgba(255,255,255,0.07) 1px, transparent 0);
+    background-size: 240px 240px;
+  }
+}
+
+.eyebrow--light {
+  color: #a5f3fc;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.impact__title { color: #fff; }
+.impact__sub { color: rgba(255, 255, 255, 0.68); }
+
+.impact__grid {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 60px;
+  align-items: start;
+
+  @media (max-width: 900px) {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+.impact__reasons {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.reason {
+  display: flex;
+  gap: 18px;
+
+  strong {
+    display: block;
+    font-family: var(--font-heading);
+    font-size: 16.5px;
+    margin-bottom: 6px;
+  }
+
+  p {
+    color: rgba(255, 255, 255, 0.65);
+    font-size: 14.5px;
+  }
+}
+
+.reason__num {
+  flex-shrink: 0;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 14px;
+  color: #a5f3fc;
+  border: 1.5px solid rgba(165, 243, 252, 0.35);
+  border-radius: 10px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.impact__stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+
+  @media (max-width: 520px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.impact-card {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-md);
+  padding: 26px 24px;
+  backdrop-filter: blur(6px);
+  transition: transform 0.35s ease, background 0.35s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  strong {
+    display: block;
+    font-family: var(--font-heading);
+    font-size: 15px;
+    margin-top: 4px;
+  }
+
+  p {
+    margin-top: 6px;
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.6);
+  }
+}
+
+.impact-card__value {
+  font-family: var(--font-heading);
+  font-size: 32px;
+  font-weight: 800;
+  color: #67e8f9;
+}
